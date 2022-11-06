@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="RemoteTargetsManager">
+    <option name="projectDefaultTargetUuid" value="c1087b78-b0fb-4b54-bdca-c91fe08582dd" />
+    <targets>
+      <target name="WSL" type="wsl" uuid="c1087b78-b0fb-4b54-bdca-c91fe08582dd">
+        <config>
+          <option name="distributionMsId" value="Ubuntu" />
+          <option name="projectRootOnTarget" value="/mnt/c/Program Files/JetBrains/CLion 2022.2.4/jbr/bin&#10;/test1" />
+        </config>
+      </target>
+    </targets>
+  </component>
+</project>

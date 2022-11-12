@@ -37,4 +37,5 @@ int main()
         printf("Brak pierwiastków!\n");
     }
 
+    return 0;
 }

@@ -26,10 +26,10 @@ int main()
         }
     }
 
-    printf("Liczby pierwsze to: ");
+    printf("Liczby pierwsze mniejsze od %d, to: ", n);
 
     for (int k = 0; k < n; k++) {
-        if (conditions[k] == 1) { printf("%d, ", array[k]); }
+        if (conditions[k] == 1 && array[k] != n) { printf("%d, ", array[k]); }
     }
 
     printf("\n");

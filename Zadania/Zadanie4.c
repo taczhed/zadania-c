@@ -2,7 +2,7 @@
 
 int main ()
 {
-    int m, n, a;
+    int m, n, r;
     printf("~~~ Algorytm Euklidesa NWD(m, n) ~~~\nPodaj m: ");
     scanf("%d", &m);
     printf("Podaj n: ");
@@ -18,9 +18,9 @@ int main ()
     if (n == 0) { printf("%d", m); }
 
     while (n != 0) {
-        a = m % n;
+        r = m % n;
         m = n;
-        n = a;
+        n = r;
     }
 
     printf("NWD: %d \n", m);

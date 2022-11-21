@@ -25,7 +25,7 @@ int main()
     if (delta > 0) {
         x1 = ((-1 * b) + sqrt(delta)) / (2 * a);
         x2 = ((-1 * b) - sqrt(delta)) / (2 * a);
-        printf("x1 = %f,\nx2 = %f\n", x1, x2);
+        printf("x1 = %f\nx2 = %f\n", x1, x2);
     }
 
     else if (delta == 0) {

@@ -11,7 +11,6 @@ int main()
         else { i++; }
     }
 
-
     for (int index = 0; index < size; index++) { sum += array[index]; }
 
     avg = sum / size;

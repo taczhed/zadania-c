@@ -18,7 +18,6 @@ int main() {
     while (fgets(line, sizeof line, stdin)) {
         int lineLength = strlen(line);
         if (lineLength == 1) continue;
-        Tekst[n] = line;
         Tekst[n] = malloc(lineLength); // przydzielenie pamięci
         strcpy(Tekst[n], line);
         n++;

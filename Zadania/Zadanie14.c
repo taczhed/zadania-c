@@ -72,13 +72,5 @@ int main() {
             printf("Błąd: Niedozwolony znak: %s\n", c);
         }
 
-//        debug helper
-
-//        printf("stack size: %d, stack:", stack_size);
-//        printf("[");
-//        for (int i = 0; i < stack_size; i++) {
-//            printf("%f,", stack[i]);
-//        }
-//        printf("]\n");
     }
 }

@@ -1,48 +1,51 @@
 #include <stdio.h>
 #include <string.h>
-#include <stdlib.h>
+#define MAX_LEN 1000
 
-int main()
-{
+typedef struct { int digits[MAX_LEN]; int length; } number;
 
-    char a[4], b[3];
-    scanf("%s", a);
-    scanf("%s", b);
-    printf("String: %s\nSize: %ld\n", a, sizeof(a));
-    printf("%d\n", atoi(a[0]) * atoi(b[0]));
-    for (int ib = 0; ib < sizeof(b); ib++) {
-        int c[4] = {0, 0, 0, 0};
-        for (int ia = 0; ia < sizeof(a); ia++) {
-            for (int i = 0; i < sizeof(b); i++) {
-                int liczba = b[ib] * a[ia];
-            }
+number readNumber() {
+    printf("Podaj liczbę: ");
+    char input[MAX_LEN];
+    scanf("%s", input);
+    int len = strlen(input);
+    number result;
+    result.length = len;
+    for (int i = 0; i < len; i++) { result.digits[i] = input[len - i - 1] - '0'; }
+    return result;
+}
+
+number multiply(number x, number y) {
+    number result;
+    result.length = x.length + y.length;
+    for (int i = 0; i < result.length; i++) { result.digits[i] = 0; } // Wypełnianie zerami
+
+    // Mnożenie na indeksach
+    for (int i = 0; i < x.length; i++) {
+        for (int j = 0; j < y.length; j++) {
+            result.digits[i + j] += x.digits[i] * y.digits[j];
         }
     }
-//    char* input1 = "1", input2;
-//    int i = 0;
-//    int aArray[1000], bArray[1000];
-//
-//    printf("Podaj pierwszą liczbę: ");
-//    while (scanf("%c", input1) != "\n") {
-////        aSize++;
-//        aArray[i] = atoi(input1);
-//        i++;
-//    }
 
-//    printf("Podaj drugą liczbę: ");
-//    scanf("%c", &input2);
+    // Usuwanie przepełnień
+    for (int i = 0; i < result.length - 1; i++) {
+        result.digits[i + 1] += result.digits[i] / 10;
+        result.digits[i] %= 10;
+    }
 
-//    long unsigned int aSize, bSize;
+    // Usuwanie zbędnych zer z przodu
+    while (result.length > 1 && result.digits[result.length - 1] == 0) { result.length--; }
+    return result;
+}
 
-//    aSize = strlen(&input1);
+int main() {
+    number x = readNumber();
+    number y = readNumber();
+    number result = multiply(x, y);
 
-
-//    for (int i = 0; i < strlen(input1); i++) {
-//
-//    }
-
-
-//    printf("size: %d", aSize);
+    printf("Iloczyn: ");
+    for (int i = result.length - 1; i >= 0; i--) { printf("%d", result.digits[i]);}
+    printf("\n");
 
     return 0;
 }

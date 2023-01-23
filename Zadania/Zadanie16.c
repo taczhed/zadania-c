@@ -2,7 +2,7 @@
 #include <stdlib.h>
 #include <string.h>
 
-#define N_MAX 100 // maksymalna liczba wierszy
+#define N_MAX 100
 
 int compareLines(const void *a, const void *b) {
     char *stringA = *(char**)a;
